@@ -4,7 +4,7 @@ let randsequence = [];
 let playsequence = [];
 
 export default function Game(colour, colourName) {
-    RandomSequence();
+    RandomSequence(colourName);
     AppendPlay(colour)
     console.log("Player Sequence: ", playsequence);
 }
@@ -34,4 +34,7 @@ export function RandomSequence(colourName) {
     console.log("Random Sequence: ", randsequence);
     var element = document.getElementById(colourName);
     element.style.backgroundColor = "#9e9e9e";
+    setTimeout(() => {
+        element.style.backgroundColor = colourName;
+    }, 100)
 }
